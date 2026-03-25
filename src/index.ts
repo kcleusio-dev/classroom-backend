@@ -6,6 +6,7 @@ import cors from 'cors';
 const app = express();
 const PORT = 8000;
 
+if (!process.env.FRONTEND_URL) throw new Error('FORNTEND_URL is missing in .env file');
 app.use(cors({
     origin: process.env.FRONTEND_ORIGIN,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
